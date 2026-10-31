@@ -1,0 +1,324 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Garantia Soluções — negociação de financiamento com o banco</title>
+<meta name="description" content="Assessoria extrajudicial em financiamentos: análise do contrato e negociação direta com o banco para reduzir a dívida e proteger o seu veículo.">
+<meta property="og:title" content="Garantia Soluções">
+<meta property="og:description" content="Assessoria extrajudicial em financiamentos: análise do contrato e negociação direta com o banco para reduzir a dívida e proteger o seu veículo.">
+<meta property="og:image" content="logo.png">
+<meta name="theme-color" content="#041633">
+<link rel="icon" href="icone.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700&family=Barlow:wght@400;500;600;700&family=Montserrat:ital,wght@0,700;0,800;1,800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --noite:#041633;      /* fundo escuro (o azul mais fundo da marca) */
+  --noite-2:#0A2552;    /* cartões sobre o escuro */
+  --azul:#0B4DB3;
+  --azul-vivo:#2F80ED;
+  --verde:#2E9E46;      /* a seta do logo; também os botões de WhatsApp */
+  --verde-escuro:#24803A;
+  --verde-claro:#5BD27A;
+  --vermelho:#E5383B;   /* o "%" das artes: só no valor antigo da dívida */
+  --gelo:#F2F6FC;
+  --tinta:#0F1E36;
+  --cinza:#5A6A82;
+  --linha:#E1E8F2;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--noite);color:#fff;font:17px/1.6 Barlow,system-ui,sans-serif;-webkit-font-smoothing:antialiased}
+img,svg{display:block;max-width:100%}
+a{color:inherit}
+h1,h2,h3{font-family:Montserrat,system-ui,sans-serif;line-height:1.12;margin:0}
+p{margin:0}
+.w{width:100%;max-width:1200px;margin:0 auto;padding:0 20px}
+section[id]{scroll-margin-top:76px}
+:focus-visible{outline:3px solid var(--verde-claro);outline-offset:3px;border-radius:6px}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{animation:none!important;transition:none!important}}
+
+/* botões */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;border-radius:12px;padding:16px 28px;
+  font:700 17px/1.2 Montserrat,sans-serif;text-decoration:none;text-align:center;transition:transform .15s ease,background .15s ease}
+.btn:hover{transform:translateY(-2px)}
+.btn svg{width:22px;height:22px;flex:none}
+.btn-wa{background:var(--verde);color:#fff;box-shadow:0 10px 30px rgba(46,158,70,.35)}
+.btn-wa:hover{background:var(--verde-escuro)}
+.btn-grande{padding:20px 36px;font-size:19px}
+
+/* topo fixo */
+.topo{position:fixed;top:0;left:0;right:0;z-index:40;background:rgba(4,22,51,.92);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-bottom:1px solid rgba(255,255,255,.08)}
+.topo .w{display:flex;align-items:center;gap:26px;height:72px}
+.topo .marca img{height:48px;width:auto}
+.topo nav{display:flex;gap:24px;margin-left:auto;font-weight:500;font-size:16px}
+.topo nav a{text-decoration:none;color:#C8D6EE}
+.topo nav a:hover{color:#fff}
+.topo .btn{padding:11px 18px;font-size:14px;border-radius:10px;box-shadow:none}
+.topo .btn svg{width:18px;height:18px}
+
+/* abertura */
+.abertura{position:relative;overflow:hidden;text-align:center;padding:150px 0 70px;
+  background:
+    radial-gradient(600px 380px at 15% 25%,rgba(47,128,237,.35),transparent 70%),
+    radial-gradient(520px 360px at 88% 70%,rgba(46,158,70,.28),transparent 70%),
+    var(--noite)}
+.abertura::before{content:"";position:absolute;inset:0;pointer-events:none;opacity:.25;
+  background-image:radial-gradient(rgba(255,255,255,.35) 1px,transparent 1.2px);background-size:26px 26px;
+  -webkit-mask-image:linear-gradient(to bottom,#000 30%,transparent 95%);mask-image:linear-gradient(to bottom,#000 30%,transparent 95%)}
+.abertura .w{position:relative}
+.selo{display:inline-flex;align-items:center;gap:10px;padding:8px 16px;border-radius:999px;background:rgba(46,158,70,.12);
+  border:1px solid rgba(91,210,122,.35);color:#BFF0CC;font-weight:600;font-size:15px;margin-bottom:26px}
+.selo i{width:8px;height:8px;border-radius:50%;background:var(--verde-claro);box-shadow:0 0 0 4px rgba(91,210,122,.2)}
+.abertura h1{font-size:clamp(36px,5.6vw,66px);font-weight:800;letter-spacing:-.5px;max-width:18ch;margin:0 auto}
+.abertura h1 .l2{display:block;margin-top:6px;background:linear-gradient(90deg,#7DB4FF,var(--verde-claro));
+  -webkit-background-clip:text;background-clip:text;color:transparent}
+.alerta{display:inline-flex;align-items:center;gap:12px;margin:30px auto 0;padding:12px 24px;border-radius:14px;background:var(--vermelho);color:#fff;
+  font:800 clamp(18px,2.3vw,26px)/1.25 Montserrat,sans-serif;box-shadow:0 12px 34px rgba(229,56,59,.35);max-width:100%}
+.alerta svg{width:28px;height:28px;flex:none}
+.abertura .sub{font:700 clamp(20px,2.3vw,26px)/1.3 Montserrat,sans-serif;margin:26px auto 14px;color:#fff;max-width:36ch}
+.abertura .txt{color:#B9C9E4;font-size:19px;max-width:58ch;margin:0 auto 34px}
+
+/* números */
+.numeros{list-style:none;margin:64px auto 0;padding:0;display:grid;grid-template-columns:repeat(var(--n,4),1fr);max-width:1000px;
+  background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);border-radius:20px}
+.numeros li{padding:26px 18px;border-left:1px solid rgba(255,255,255,.1)}
+.numeros li:first-child{border-left:0}
+.numeros strong{display:block;font:700 44px/1 "Barlow Condensed",sans-serif;color:var(--verde-claro);margin-bottom:6px}
+.numeros li:nth-child(even) strong{color:#7DB4FF}
+.numeros span{color:#C8D6EE;font-size:16px}
+.nota{color:#8FA3C4;font-size:13px;margin-top:14px}
+
+/* títulos de seção */
+.cab{text-align:center;max-width:720px;margin:0 auto 52px}
+.cab .rot{display:block;color:var(--verde);font-weight:700;font-size:15px;margin-bottom:10px}
+.cab h2{font-size:clamp(30px,3.6vw,44px);font-weight:800}
+.cab p{margin-top:14px;font-size:19px}
+.escuro .cab .rot{color:var(--verde-claro)}
+.escuro .cab p{color:#B9C9E4}
+.claro{background:#fff;color:var(--tinta)}
+.claro .cab h2{color:var(--noite)}
+.claro .cab p{color:var(--cinza)}
+.gelo{background:var(--gelo);color:var(--tinta)}
+.gelo .cab h2{color:var(--noite)}
+.gelo .cab p{color:var(--cinza)}
+section.bloco{padding:100px 0}
+
+/* o que fazemos */
+.escuro{background:var(--noite)}
+.servicos{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.servico{background:var(--noite-2);border:1px solid rgba(255,255,255,.08);border-radius:18px;padding:30px 28px;transition:border-color .2s ease}
+.servico:hover{border-color:rgba(91,210,122,.45)}
+.servico .ic{width:56px;height:56px;border-radius:14px;display:grid;place-items:center;background:rgba(46,158,70,.14);color:var(--verde-claro);margin-bottom:22px}
+.servico:nth-child(2) .ic{background:rgba(47,128,237,.16);color:#7DB4FF}
+.servico .ic svg{width:28px;height:28px}
+.servico h3{font-size:21px;margin-bottom:10px}
+.servico p{color:#B9C9E4}
+
+.passos{list-style:none;margin:70px 0 0;padding:0;display:grid;grid-template-columns:repeat(4,1fr);counter-reset:p;position:relative}
+.passos::before{content:"";position:absolute;left:24px;right:calc(25% - 24px);top:23px;height:2px;background:linear-gradient(90deg,#7DB4FF,var(--verde-claro))}
+.passos li{position:relative;padding-right:22px}
+.passos li::before{counter-increment:p;content:counter(p);position:relative;display:grid;place-items:center;width:48px;height:48px;border-radius:50%;
+  background:var(--noite);border:2px solid #7DB4FF;color:#fff;font:700 24px/1 "Barlow Condensed",sans-serif;margin-bottom:16px}
+.passos li:last-child::before{border-color:var(--verde-claro)}
+.passos h3{font-size:18px;margin-bottom:6px}
+.passos p{color:#B9C9E4;font-size:16px}
+.passos-tit{text-align:center;font:800 24px/1.2 Montserrat,sans-serif;margin-top:84px}
+
+/* casos de sucesso */
+.casos{display:grid;grid-template-columns:repeat(var(--nc,4),minmax(0,1fr));gap:22px}
+.caso{border:1px solid var(--linha);border-radius:18px;overflow:hidden;background:#fff;box-shadow:0 10px 30px rgba(4,22,51,.07);display:flex;flex-direction:column}
+.caso .topo-caso{position:relative;padding:22px 22px 20px;color:#fff;
+  background:radial-gradient(260px 160px at 100% 0%,rgba(46,158,70,.35),transparent 70%),linear-gradient(160deg,var(--azul),var(--noite))}
+.caso .tipo{font-size:14px;color:#C8D6EE;min-height:21px;padding-right:64px}
+.caso .acordo{font:italic 800 26px/1.05 Montserrat,sans-serif;margin:8px 0 18px}
+.caso .pct{position:absolute;top:18px;right:18px;background:var(--verde);color:#fff;border-radius:999px;padding:5px 11px;font:700 15px/1 Montserrat,sans-serif}
+.caso dl{margin:0;background:rgba(0,0,0,.25);border:1px solid rgba(255,255,255,.18);border-radius:10px;padding:10px 12px;display:grid;grid-template-columns:auto 1fr;gap:2px 10px;font-weight:600}
+.caso dt{color:#C8D6EE}
+.caso dd{margin:0;text-align:right}
+.caso dd.antes{text-decoration:line-through;text-decoration-color:var(--vermelho);text-decoration-thickness:2px;color:#FFB4B5}
+.caso dd.depois{color:var(--verde-claro);font-size:18px}
+.caso .corpo{padding:20px 22px 24px}
+.caso h3{font-size:17px;color:var(--noite)}
+.caso .cid{color:var(--cinza);font-size:14px;margin:2px 0 10px}
+.caso blockquote{margin:0;color:#34445c;font-size:16px}
+.caso.modelo{border-style:dashed;border-width:2px;box-shadow:none}
+.acoes-sec{text-align:center;margin-top:48px}
+
+/* depoimentos */
+.depos{display:grid;grid-template-columns:repeat(var(--nd,3),minmax(0,1fr));gap:22px}
+.depo{margin:0;background:#fff;border:1px solid var(--linha);border-radius:18px;padding:30px 28px 24px;display:flex;flex-direction:column;box-shadow:0 10px 30px rgba(4,22,51,.06)}
+.depo .estrelas{color:#F5B301;letter-spacing:3px;font-size:18px;margin-bottom:14px}
+.depo blockquote{margin:0 0 22px;font-size:17.5px;color:#25344d;flex:1}
+.depo figcaption{display:flex;align-items:center;gap:14px;font-weight:700;color:var(--noite)}
+.depo .ini{width:46px;height:46px;border-radius:50%;display:grid;place-items:center;background:var(--azul);color:#fff;font:700 16px/1 Montserrat,sans-serif;flex:none}
+.depo figcaption span span{display:block;font-weight:500;color:var(--cinza);font-size:15px}
+.depo.modelo{border-style:dashed;border-width:2px;box-shadow:none}
+
+/* chamada final */
+.final{position:relative;overflow:hidden;text-align:center;padding:110px 0;
+  background:radial-gradient(700px 400px at 50% 0%,rgba(47,128,237,.35),transparent 70%),radial-gradient(500px 300px at 50% 110%,rgba(46,158,70,.3),transparent 70%),var(--noite)}
+.final .rot{display:block;color:var(--verde-claro);font-weight:700;font-size:15px;margin-bottom:12px}
+.final h2{font-size:clamp(32px,4.4vw,52px);font-weight:800;max-width:20ch;margin:0 auto}
+.final p.txt{color:#B9C9E4;font-size:19px;max-width:56ch;margin:20px auto 36px}
+.final .gratis{color:#fff;background:rgba(46,158,70,.35);border-bottom:3px solid var(--verde-claro);padding:0 6px;border-radius:4px;white-space:nowrap}
+.final .obs{color:#8FA3C4;font-size:15px;margin-top:16px}
+
+/* rodapé */
+footer{background:#020D20;color:#B9C9E4;padding:64px 0 120px;font-size:15.5px;border-top:1px solid rgba(255,255,255,.06)}
+footer .w{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:36px}
+footer img{height:55px;width:auto;margin-bottom:16px}
+footer h3{font:700 15px/1.2 Montserrat,sans-serif;color:#fff;margin:0 0 12px}
+footer ul{list-style:none;margin:0;padding:0}
+footer li{margin:7px 0}
+footer a{color:#fff;text-decoration:none}
+footer a:hover{text-decoration:underline}
+.aviso{grid-column:1/-1;border-top:1px solid rgba(255,255,255,.1);padding-top:20px;font-size:13.5px;color:#8FA3C4}
+
+/* WhatsApp flutuante */
+.wa-flutuante{position:fixed;right:22px;bottom:22px;z-index:50;width:62px;height:62px;border-radius:50%;display:grid;place-items:center;
+  background:var(--verde);color:#fff;box-shadow:0 12px 30px rgba(0,0,0,.35)}
+.wa-flutuante svg{width:32px;height:32px}
+.wa-flutuante::after{content:"";position:absolute;inset:0;border-radius:50%;box-shadow:0 0 0 0 rgba(46,158,70,.55);animation:onda 2.4s ease-out infinite}
+@keyframes onda{to{box-shadow:0 0 0 18px rgba(46,158,70,0)}}
+
+@media (max-width:1060px){
+  .casos{grid-template-columns:repeat(2,minmax(0,1fr))}
+}
+@media (max-width:900px){
+  .topo nav{display:none}
+  .topo .btn{margin-left:auto}
+  .servicos{grid-template-columns:1fr}
+  .passos{grid-template-columns:1fr 1fr;row-gap:34px}
+  .passos::before{display:none}
+  .depos{grid-template-columns:1fr}
+  .numeros{grid-template-columns:repeat(2,1fr)}
+  .numeros li:nth-child(3){border-left:0}
+  .numeros li:nth-child(n+3){border-top:1px solid rgba(255,255,255,.1)}
+  footer .w{grid-template-columns:1fr}
+}
+@media (max-width:600px){
+  body{font-size:16px}
+  .topo .w{height:64px;gap:12px}
+  .topo .marca img{height:38px}
+  .abertura{padding:112px 0 54px}
+  .abertura .txt{font-size:17px}
+  .alerta{padding:12px 16px;gap:10px}
+  .alerta svg{width:24px;height:24px}
+  .final .gratis{white-space:normal}
+  .btn-grande{width:100%;padding:18px 20px;font-size:17px}
+  section.bloco{padding:72px 0}
+  .cab{margin-bottom:36px}
+  .cab p{font-size:17px}
+  .numeros{grid-template-columns:1fr 1fr;margin-top:44px}
+  .numeros li{padding:20px 14px}
+  .numeros strong{font-size:36px}
+  .casos{grid-template-columns:1fr}
+  .passos{grid-template-columns:1fr}
+  .final{padding:80px 0}
+  .wa-flutuante{width:58px;height:58px;right:16px;bottom:16px}
+}
+</style>
+</head>
+<body>
+
+<header class="topo">
+  <div class="w">
+    <a class="marca" href="./" aria-label="Garantia Soluções — início"><img src="logo_branco.png" alt="Garantia Soluções" width="157" height="48"></a>
+    <nav aria-label="Seções">
+      <a href="#o-que-fazemos">O que fazemos</a>
+      
+      
+      <a href="#contato">Contato</a>
+      <a href="area/">Área restrita</a>
+    </nav>
+    <a class="btn btn-wa" href="https://wa.me/558234368060?text=Ol%C3%A1%21%20Vim%20pelo%20site%20e%20quero%20uma%20an%C3%A1lise%20do%20meu%20financiamento." target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3.5 20.5l1.3-4.2A8.5 8.5 0 1 1 8 19.4z"/><path d="M9 8.6c.2-.5.6-.6 1-.6l.6 1.5-.6.8c.5 1 1.3 1.8 2.3 2.3l.8-.6 1.5.6c0 .4-.1.8-.6 1-.9.4-2.3.1-3.7-1.2C9 11 8.6 9.6 9 8.6z" fill="currentColor" stroke="none"/></svg>Fale conosco</a>
+  </div>
+</header>
+
+<main>
+<section class="abertura" aria-labelledby="t-abertura">
+  <div class="w">
+    <span class="selo"><i aria-hidden="true"></i>Assessoria extrajudicial em financiamentos</span>
+    <h1 id="t-abertura">Parcelas atrasadas ou juros altos demais?<span class="l2">Não perca seu veículo para o banco.</span></h1>
+    <p class="alerta"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3 2 20h20z"/><path d="M12 10v4M12 17h.01"/></svg>EVITE A BUSCA E APREENSÃO do seu veículo</p>
+    <p class="sub">Negociamos direto com o banco para reduzir a sua dívida.</p>
+    <p class="txt">Com as parcelas em dia ou atrasadas, analisamos o seu contrato de financiamento e buscamos um acordo que caiba no seu bolso, sem você precisar enfrentar o banco sozinho.</p>
+    <a class="btn btn-wa btn-grande" href="https://wa.me/558234368060?text=Ol%C3%A1%21%20Vim%20pelo%20site%20e%20quero%20uma%20an%C3%A1lise%20do%20meu%20financiamento." target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3.5 20.5l1.3-4.2A8.5 8.5 0 1 1 8 19.4z"/><path d="M9 8.6c.2-.5.6-.6 1-.6l.6 1.5-.6.8c.5 1 1.3 1.8 2.3 2.3l.8-.6 1.5.6c0 .4-.1.8-.6 1-.9.4-2.3.1-3.7-1.2C9 11 8.6 9.6 9 8.6z" fill="currentColor" stroke="none"/></svg>Quero uma análise do meu contrato</a>
+    <ul class="numeros" style="--n:2"><li><strong>até 80%</strong><span>de redução no valor do débito</span></li><li><strong>+ de R$ 18 milhões</strong><span>recuperados para nossos clientes</span></li></ul><p class="nota">Cada contrato é analisado individualmente; o resultado varia conforme o contrato e a instituição financeira.</p>
+  </div>
+</section>
+
+<section id="o-que-fazemos" class="bloco escuro" aria-labelledby="t-fazemos">
+  <div class="w">
+    <div class="cab">
+      <span class="rot">O que fazemos</span>
+      <h2 id="t-fazemos">Seu contrato pode ser ilegal e abusivo</h2>
+      <p>Muita gente paga juros e tarifas acima do justo sem saber. Analisamos o seu financiamento e cuidamos da negociação com o banco.</p>
+    </div>
+    <div class="servicos">
+      <article class="servico">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"/><path d="M14 3v5h5"/><circle cx="11.5" cy="14" r="2.5"/><path d="m13.5 16 2 2"/></svg></div>
+        <h3>Análise do seu contrato</h3>
+        <p>Conferimos juros, tarifas, seguros e o valor cobrado para mostrar onde a sua parcela está pesando mais do que deveria.</p>
+      </article>
+      <article class="servico">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 21h18M5 21V10M19 21V10M9 21v-6h6v6"/><path d="M2 10 12 3l10 7z"/></svg></div>
+        <h3>Negociação direta com o banco</h3>
+        <p>Falamos com a instituição financeira por você e buscamos um acordo com desconto e parcelas que caibam no seu orçamento.</p>
+      </article>
+      <article class="servico">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 17h14l-1.5-5.5A2 2 0 0 0 15.6 10H8.4a2 2 0 0 0-1.9 1.5z"/><circle cx="8" cy="17.5" r="1.5"/><circle cx="16" cy="17.5" r="1.5"/><path d="M12 2.5 8.5 4v2.5c0 1.8 1.5 3 3.5 3.5 2-.5 3.5-1.7 3.5-3.5V4z"/></svg></div>
+        <h3>Proteção do seu veículo</h3>
+        <p>Parcelas atrasadas? Agir cedo aumenta as chances de um acordo antes que o banco peça a busca e apreensão do carro.</p>
+      </article>
+    </div>
+
+    <h3 class="passos-tit">Como funciona</h3>
+    <ol class="passos">
+      <li><h3>Você chama no WhatsApp</h3><p>Conte o que está acontecendo com o seu financiamento.</p></li>
+      <li><h3>Analisamos o contrato</h3><p>Você recebe o retorno sobre o que está sendo cobrado.</p></li>
+      <li><h3>Negociamos com o banco</h3><p>Apresentamos a proposta e cuidamos das conversas.</p></li>
+      <li><h3>Você fecha o acordo</h3><p>Com as condições claras e acompanhamento até o fim.</p></li>
+    </ol>
+  </div>
+</section>
+
+
+
+
+
+<section class="final" aria-labelledby="t-final">
+  <div class="w">
+    <span class="rot">Não espere perder o seu veículo</span>
+    <h2 id="t-final">Quanto mais o tempo passa, mais caro fica</h2>
+    <p class="txt">Juros e multas crescem a cada parcela atrasada. Mande uma mensagem agora: a nossa equipe faz uma <strong class="gratis">análise gratuita do seu contrato</strong> e mostra o melhor caminho para negociar com o banco.</p>
+    <a class="btn btn-wa btn-grande" href="https://wa.me/558234368060?text=Ol%C3%A1%21%20Vim%20pelo%20site%20e%20quero%20uma%20an%C3%A1lise%20do%20meu%20financiamento." target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3.5 20.5l1.3-4.2A8.5 8.5 0 1 1 8 19.4z"/><path d="M9 8.6c.2-.5.6-.6 1-.6l.6 1.5-.6.8c.5 1 1.3 1.8 2.3 2.3l.8-.6 1.5.6c0 .4-.1.8-.6 1-.9.4-2.3.1-3.7-1.2C9 11 8.6 9.6 9 8.6z" fill="currentColor" stroke="none"/></svg>Falar com a Garantia Soluções agora</a>
+    
+  </div>
+</section>
+</main>
+
+<footer id="contato">
+  <div class="w">
+    <div>
+      <img src="logo_branco.png" alt="Garantia Soluções" width="180" height="55">
+      <p style="max-width:38ch">Assessoria extrajudicial em financiamentos: análise do contrato e negociação direta com o banco para reduzir a dívida e proteger o seu veículo.</p>
+    </div>
+    <div>
+      <h3>Contato</h3>
+      <ul><li>WhatsApp: <a href="https://wa.me/558234368060?text=Ol%C3%A1%21%20Vim%20pelo%20site%20e%20quero%20uma%20an%C3%A1lise%20do%20meu%20financiamento." target="_blank" rel="noopener">(82) 3436-8060</a></li><li>Instagram: <a href="https://www.instagram.com/garantia_solucoes/" target="_blank" rel="noopener">@garantia_solucoes</a></li></ul>
+    </div>
+    <div>
+      <h3>Atendimento</h3>
+      <ul><li>Localizados em Maceió/AL, atendimento em todo o Brasil</li><li><a href="area/">Área restrita da equipe</a></li></ul>
+    </div>
+    <p class="aviso">© 2026 Garantia Soluções</p>
+  </div>
+</footer>
+
+<a class="wa-flutuante" href="https://wa.me/558234368060?text=Ol%C3%A1%21%20Vim%20pelo%20site%20e%20quero%20uma%20an%C3%A1lise%20do%20meu%20financiamento." target="_blank" rel="noopener" aria-label="Falar no WhatsApp"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3.5 20.5l1.3-4.2A8.5 8.5 0 1 1 8 19.4z"/><path d="M9 8.6c.2-.5.6-.6 1-.6l.6 1.5-.6.8c.5 1 1.3 1.8 2.3 2.3l.8-.6 1.5.6c0 .4-.1.8-.6 1-.9.4-2.3.1-3.7-1.2C9 11 8.6 9.6 9 8.6z" fill="currentColor" stroke="none"/></svg></a>
+</body>
+</html>

@@ -1,0 +1,200 @@
+<!doctype html><html lang="pt-BR"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow"><title>Área restrita — Garantia Soluções</title>
+<link rel="icon" href="../icone.png">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600&family=Montserrat:wght@700;800&display=swap" rel="stylesheet">
+<style>
+:root{--azul:#0B4DB3;--azul-noite:#062A63;--noite:#041633;--azul-vivo:#1E6FE0;--verde:#2E9E46;--verde-claro:#5BD27A;--tinta:#0F1E36;--cinza:#55657D;--linha:#d5dfee}
+*{box-sizing:border-box}html,body{margin:0;height:100%}
+body{color:var(--tinta);font:16px/1.5 Barlow,system-ui,sans-serif;background:radial-gradient(120% 90% at 10% 0%,var(--azul-vivo) 0%,var(--azul) 45%,var(--azul-noite) 100%) fixed}
+button{font:inherit;cursor:pointer}
+:focus-visible{outline:3px solid var(--verde-claro);outline-offset:3px}
+[hidden]{display:none!important}
+/* login */
+.tela{min-height:100%;display:flex;align-items:center;justify-content:center;padding:20px}
+.cx{width:100%;max-width:400px;background:#fff;border-radius:20px;padding:30px 26px 22px;box-shadow:0 30px 80px rgba(3,20,55,.45);border-top:6px solid var(--verde)}
+.cx img.logo{height:48px;width:auto;margin:0 0 18px}
+h1{font:800 22px/1.2 Montserrat,system-ui,sans-serif;margin:0 0 4px;color:var(--azul-noite)}
+.cx p{margin:0 0 14px;color:var(--cinza);font-size:15px}
+label{display:block;font-size:14px;font-weight:600;color:var(--azul-noite);margin:14px 0 5px}
+input{width:100%;padding:12px 13px;border:1.5px solid var(--linha);border-radius:10px;font:inherit;font-size:16px;color:var(--tinta);background:#f7faff}
+input:focus{outline:none;border-color:var(--azul-vivo);box-shadow:0 0 0 3px rgba(30,111,224,.2)}
+.prim{width:100%;margin-top:20px;padding:14px;border:0;border-radius:999px;background:var(--azul);color:#fff;font:700 16px/1 Montserrat,system-ui,sans-serif}
+.prim:hover{background:var(--azul-noite)}
+.prim:disabled{opacity:.6;cursor:wait}
+.msg{min-height:22px;margin-top:12px;font-size:14px;color:#c62828}
+.vol{display:block;margin-top:10px;font-size:14px;text-align:center;color:var(--azul)}
+/* menu */
+.menu{width:100%;max-width:760px}
+.menu .cab{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:22px;color:#fff}
+.menu .cab img{height:44px;width:auto}
+.sair{background:rgba(255,255,255,.12);color:#fff;border:1px solid rgba(255,255,255,.35);border-radius:10px;padding:8px 14px;font-weight:600}
+.sair:hover{background:rgba(255,255,255,.22)}
+.menu h1{color:#fff;font-size:24px;margin-bottom:4px}
+.menu .quem{color:#C8D6EE;margin:0 0 22px}
+.opcoes{display:grid;gap:16px}
+.op{display:flex;align-items:center;gap:18px;width:100%;text-align:left;background:#fff;border:0;border-radius:18px;padding:22px 22px;box-shadow:0 18px 50px rgba(3,20,55,.35);border-left:8px solid var(--verde);transition:transform .15s ease}
+.op:nth-child(2){border-left-color:var(--azul-vivo)}
+.op:hover{transform:translateY(-2px)}
+.op .ic{width:58px;height:58px;border-radius:16px;display:grid;place-items:center;background:#e9f6ec;color:var(--verde);flex:none}
+.op:nth-child(2) .ic{background:#e8f0fd;color:var(--azul-vivo)}
+.op .ic svg{width:30px;height:30px}
+.op strong{display:block;font:800 18px/1.25 Montserrat,system-ui,sans-serif;color:var(--azul-noite);letter-spacing:.2px}
+.op span.d{display:block;color:var(--cinza);font-size:15px;margin-top:4px}
+.op span.a{display:block;color:#7b8aa3;font-size:13.5px;margin-top:6px}
+.op .seta{margin-left:auto;color:var(--azul);font:800 26px/1 Montserrat,sans-serif;flex:none}
+.vazio{background:#fff;border-radius:16px;padding:22px;color:var(--cinza)}
+.op.x{border-left-color:#C8A13A}
+.op.x .ic{background:#f8f1de;color:#9A7414}
+.op .cad{display:inline-flex;vertical-align:-2px;margin-left:8px;color:#9A7414}
+.op .cad svg{width:17px;height:17px}
+.cx.ouro{border-top-color:#C8A13A}
+/* painel aberto */
+.barra{position:fixed;top:0;left:0;right:0;height:56px;z-index:5;display:flex;align-items:center;gap:12px;padding:0 12px;background:var(--noite);color:#fff;box-shadow:0 2px 10px rgba(0,0,0,.25)}
+.voltar{display:inline-flex;align-items:center;gap:8px;background:var(--verde);color:#fff;border:0;border-radius:10px;padding:9px 16px;font:700 15px/1 Montserrat,sans-serif}
+.voltar:hover{background:#24803A}
+.barra .tit{font:700 15px/1.2 Montserrat,sans-serif;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;min-width:0;flex:1}
+.barra .sair{padding:7px 12px;font-size:14px}
+iframe{position:fixed;top:56px;left:0;width:100%;height:calc(100% - 56px);border:0;background:#fff}
+.carregando{position:fixed;inset:56px 0 0 0;display:grid;place-items:center;color:#fff;font-weight:600;font-size:17px}
+@media (max-width:520px){
+  .op{padding:18px 16px;gap:14px}.op .ic{width:48px;height:48px}.op .ic svg{width:26px;height:26px}
+  .op strong{font-size:16px}.op .seta{display:none}
+  .barra .sair{display:none}
+}
+</style></head><body>
+
+<div class="tela" id="t-login">
+<form class="cx" id="f" autocomplete="on">
+<img class="logo" src="../logo.png" alt="Garantia Soluções" width="157" height="48">
+<h1>Área restrita</h1><p>Acesso da equipe aos painéis.</p>
+<label for="u">Login</label><input id="u" name="username" autocomplete="username" autocapitalize="none" required>
+<label for="s">Senha</label><input id="s" name="password" type="password" autocomplete="current-password" required>
+<button class="prim" id="b" type="submit">Entrar</button><div class="msg" id="msg" role="alert"></div>
+<a class="vol" href="../">Voltar ao site</a>
+</form>
+</div>
+
+<div class="tela" id="t-menu" hidden>
+<div class="menu">
+  <div class="cab"><img src="../logo_branco.png" alt="Garantia Soluções" width="144" height="44"><button class="sair" type="button" data-sair>Sair</button></div>
+  <h1>Escolha o painel</h1>
+  <p class="quem" id="quem"></p>
+  <div class="opcoes" id="opcoes"></div>
+</div>
+</div>
+
+<div class="tela" id="t-senha" hidden>
+<form class="cx ouro" id="fx" autocomplete="off">
+<h1 id="x-tit">Painel protegido</h1><p>Este painel tem login e senha próprios, diferentes do acesso da equipe.</p>
+<label for="xu">Login do painel</label><input id="xu" autocapitalize="none" autocomplete="off" required>
+<label for="xs">Senha do painel</label><input id="xs" type="password" autocomplete="off" required>
+<button class="prim" id="xb" type="submit">Abrir painel</button><div class="msg" id="xmsg" role="alert"></div>
+<button class="vol" type="button" id="xvol" style="background:none;border:0;width:100%">Voltar ao menu</button>
+</form>
+</div>
+
+<div id="t-painel" hidden>
+  <div class="barra"><button class="voltar" type="button" id="voltar">← Voltar</button><span class="tit" id="tit"></span><button class="sair" type="button" data-sair>Sair</button></div>
+  <div class="carregando" id="carregando">Abrindo o painel…</div>
+</div>
+
+<script>
+(function(){
+var te=new TextEncoder(),C=window.crypto&&window.crypto.subtle,$=function(i){return document.getElementById(i);};
+var ICONES={buscas:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 17h14l-1.5-5.5A2 2 0 0 0 15.6 10H8.4a2 2 0 0 0-1.9 1.5z"/><circle cx="8" cy="17.5" r="1.5"/><circle cx="16" cy="17.5" r="1.5"/><path d="M12 2.5v4M10 4.5h4"/></svg>',
+  recebiveis:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2.5" y="6" width="19" height="13" rx="2"/><circle cx="12" cy="12.5" r="2.6"/><path d="M6 9.5v6M18 9.5v6"/></svg>',
+  andamentos:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"/><path d="M14 3v5h5"/><path d="M9 13h6M9 17h4"/></svg>'};
+var CADEADO='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg>';
+var ACESSO=null,CHAVES=null,LOGIN="",ABERTO=null,URLP=null,XCH={},XPED=null,ULT={};
+function extras(){return(ACESSO&&ACESSO.extras)||[];}
+function achar(id){return ACESSO.paineis.concat(extras()).filter(function(x){return x.id===id;})[0];}
+function chave(id){return(CHAVES&&CHAVES[id])||XCH[id]||null;}
+function limpar(){var q=$("quadro");if(q)q.remove();if(URLP){URL.revokeObjectURL(URLP);URLP=null;}}
+function quadro(url){
+  // iframe novo a cada painel: trocar o endereco de um iframe existente criaria entradas no historico
+  limpar();var q=document.createElement("iframe");q.id="quadro";q.title="Painel";q.setAttribute("allow","clipboard-write");q.src=url;$("t-painel").appendChild(q);
+}
+function b64(s){var b=atob(s),u=new Uint8Array(b.length);for(var i=0;i<b.length;i++)u[i]=b.charCodeAt(i);return u;}
+function hex(buf){return Array.prototype.map.call(new Uint8Array(buf),function(x){return("0"+x.toString(16)).slice(-2);}).join("");}
+function esc(s){return String(s==null?"":s).replace(/[&<>"]/g,function(c){return{"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c];});}
+function msg(t){$("msg").textContent=t||"";}
+function tela(qual){["t-login","t-menu","t-senha","t-painel"].forEach(function(x){$(x).hidden=(x!==qual);});document.body.style.overflow=(qual==="t-painel")?"hidden":"";}
+async function json(arq){var r=await fetch(arq+"?t="+Date.now(),{cache:"no-store"});if(!r.ok)throw new Error("arquivo indisponível ("+r.status+")");return r.json();}
+function guardar(){try{sessionStorage.setItem("garantia_area",JSON.stringify({sal:ACESSO.sal_ids,k:CHAVES,l:LOGIN}));}catch(x){}}
+function esquecer(){try{sessionStorage.removeItem("garantia_area");}catch(x){}}
+async function entrar(login,senha){
+  ACESSO=await json("acesso.json");login=login.trim().toLowerCase();
+  var sid=b64(ACESSO.sal_ids),lb=te.encode(login),j=new Uint8Array(sid.length+lb.length);j.set(sid);j.set(lb,sid.length);
+  var e=ACESSO.chaves[hex(await C.digest("SHA-256",j)).slice(0,24)];
+  if(!e)throw new Error("Login ou senha incorretos.");
+  var base=await C.importKey("raw",te.encode(login+":"+senha),"PBKDF2",false,["deriveKey"]);
+  var kek=await C.deriveKey({name:"PBKDF2",salt:b64(e.sal),iterations:ACESSO.iter,hash:"SHA-256"},base,{name:"AES-GCM",length:256},false,["decrypt"]);
+  var bruto;try{bruto=await C.decrypt({name:"AES-GCM",iv:b64(e.iv)},kek,b64(e.ct));}catch(x){throw new Error("Login ou senha incorretos.");}
+  CHAVES=JSON.parse(new TextDecoder().decode(bruto));LOGIN=login;guardar();menu();
+}
+function menu(){
+  ABERTO=null;limpar();
+  var lst=ACESSO.paineis.filter(function(p){return CHAVES[p.id];});
+  $("quem").textContent="Entrou como "+LOGIN+".";
+  $("opcoes").innerHTML=lst.length?lst.map(function(p){return '<button class="op" type="button" data-p="'+esc(p.id)+'"><span class="ic" aria-hidden="true">'+(ICONES[p.id]||ICONES.andamentos)+
+    '</span><span><strong>'+esc(p.titulo)+'</strong><span class="d">'+esc(p.descricao)+'</span>'+(p.atualizado?'<span class="a">Atualizado em '+esc(p.atualizado)+'</span>':'')+
+    '</span><span class="seta" aria-hidden="true">›</span></button>';}).join(""):'<div class="vazio">Nenhum painel liberado para este login.</div>';
+  $("opcoes").innerHTML+=extras().map(function(p){return '<button class="op x" type="button" data-x="'+esc(p.id)+'"><span class="ic" aria-hidden="true">'+(ICONES[p.id]||ICONES.recebiveis)+
+    '</span><span><strong>'+esc(p.titulo)+'<span class="cad" title="'+(XCH[p.id]?'Desbloqueado nesta aba':'Pede login e senha próprios')+'">'+CADEADO+'</span></strong>'+(p.descricao?'<span class="d">'+esc(p.descricao)+'</span>':'')+'</span>'+
+    '</span><span class="seta" aria-hidden="true">›</span></button>';}).join("");
+  tela("t-menu");
+}
+async function abrir(id,empilhar){
+  var p=achar(id);if(!p||!chave(id))return menu();
+  ABERTO=id;$("tit").textContent=p.titulo;$("carregando").hidden=false;$("carregando").textContent="Abrindo o painel…";tela("t-painel");
+  if(empilhar){try{history.pushState({p:id},"","#"+id);}catch(x){}}
+  try{
+    var pac=await json(p.arq);ULT[id]=pac.iv;
+    var k=await C.importKey("raw",b64(chave(id)),"AES-GCM",false,["decrypt"]);
+    var gz=await C.decrypt({name:"AES-GCM",iv:b64(pac.iv)},k,b64(pac.dados));
+    var html=await new Response(new Blob([gz]).stream().pipeThrough(new DecompressionStream("gzip"))).text();
+    if(ABERTO!==id)return;
+    var u=URL.createObjectURL(new Blob([html],{type:"text/html;charset=utf-8"}));quadro(u);URLP=u;$("carregando").hidden=true;
+  }catch(x){
+    // as chaves foram trocadas (lista de usuarios ou senha mudou) depois do login
+    if(XCH[id]&&!(CHAVES&&CHAVES[id])){delete XCH[id];pedir(id,"A senha deste painel mudou. Entre de novo, por favor.");return;}
+    esquecer();tela("t-login");msg("O acesso foi atualizado. Entre de novo, por favor.");
+  }
+}
+function pedir(id,aviso){var p=achar(id);if(!p)return menu();XPED=id;$("x-tit").textContent=p.titulo;$("xu").value="";$("xs").value="";
+  $("xmsg").textContent=aviso||"";tela("t-senha");setTimeout(function(){$("xu").focus();},30);}
+async function desbloquear(id,login,senha){
+  var p=achar(id);login=login.trim().toLowerCase();
+  var base=await C.importKey("raw",te.encode(login+":"+senha),"PBKDF2",false,["deriveKey"]);
+  var kek=await C.deriveKey({name:"PBKDF2",salt:b64(p.sal),iterations:p.iter,hash:"SHA-256"},base,{name:"AES-GCM",length:256},false,["decrypt"]);
+  var bruto;try{bruto=await C.decrypt({name:"AES-GCM",iv:b64(p.iv)},kek,b64(p.ct));}catch(x){throw new Error("Login ou senha do painel incorretos.");}
+  XCH[id]=new TextDecoder().decode(bruto);   // so na memoria desta aba: recarregar a pagina pede a senha de novo
+}
+function voltar(){menu();try{history.replaceState(null,"",location.pathname);}catch(x){}}
+function sair(){esquecer();ACESSO=null;CHAVES=null;LOGIN="";XCH={};XPED=null;$("xs").value="";$("s").value="";msg("");limpar();
+  try{history.replaceState(null,"",location.pathname);}catch(x){}tela("t-login");}
+// o painel pede para conferir se o servidor ja publicou a versao nova (depois de uma alteracao feita nele)
+window.addEventListener("message",async function(ev){
+  var q=$("quadro");if(!ev.data||ev.data.tipo!=="garantia-recarregar"||!ABERTO||!q||ev.source!==q.contentWindow)return;
+  try{var p=achar(ABERTO),pac=await json(p.arq);if(ULT[ABERTO]&&pac.iv!==ULT[ABERTO])abrir(ABERTO,false);}catch(x){}
+});
+window.addEventListener("popstate",function(ev){if(!CHAVES)return;if(ev.state&&ev.state.p&&chave(ev.state.p)){abrir(ev.state.p,false);}else{menu();}});
+$("opcoes").addEventListener("click",function(ev){var b=ev.target.closest("[data-p]");if(b)return abrir(b.getAttribute("data-p"),true);
+  var x=ev.target.closest("[data-x]");if(!x)return;var id=x.getAttribute("data-x");if(XCH[id])abrir(id,true);else pedir(id);});
+$("xvol").addEventListener("click",function(){$("xs").value="";menu();});
+$("fx").addEventListener("submit",async function(ev){ev.preventDefault();var b=$("xb");b.disabled=true;$("xmsg").textContent="Abrindo…";
+  try{await desbloquear(XPED,$("xu").value,$("xs").value);$("xs").value="";$("xmsg").textContent="";abrir(XPED,true);}
+  catch(x){$("xmsg").textContent=x.message||"Não foi possível abrir.";}b.disabled=false;});
+$("voltar").addEventListener("click",voltar);
+document.querySelectorAll("[data-sair]").forEach(function(b){b.addEventListener("click",sair);});
+if(!C||typeof DecompressionStream==="undefined"){msg("Navegador desatualizado: use Chrome, Edge, Firefox ou Safari recentes.");$("b").disabled=true;return;}
+$("f").addEventListener("submit",async function(ev){ev.preventDefault();var b=$("b");b.disabled=true;msg("Abrindo…");
+  try{await entrar($("u").value,$("s").value);msg("");}catch(x){msg(x.message||"Não foi possível entrar.");}b.disabled=false;});
+// sessao aberta nesta aba (recarregou a pagina): volta ao menu sem pedir a senha, se o site nao foi atualizado
+(async function(){try{var s=JSON.parse(sessionStorage.getItem("garantia_area")||"null");if(!s)return;
+  ACESSO=await json("acesso.json");if(ACESSO.sal_ids!==s.sal){esquecer();msg("O acesso foi atualizado. Entre de novo, por favor.");return;}
+  CHAVES=s.k;LOGIN=s.l;var h=location.hash.slice(1);if(h&&CHAVES[h]){try{history.replaceState({p:h},"","#"+h);}catch(x){}abrir(h,false);}else{menu();}
+}catch(x){esquecer();}})();
+})();
+</script></body></html>
